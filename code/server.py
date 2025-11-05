@@ -1071,32 +1071,32 @@ def resource(resource):
                 is_product_or_type = True
                 break
             
-            rendered_html = render_template(
-                "entity.html",
-                navigation=get_navigation(resource),
-                number=idx,
-                definition_number=definition_number,
-                definition=get_definition(resource, mdc),
-                entity=resource,
-                path=md[len(REPO_DIR) :].replace("\\", "/"),
-                entity_inheritance=get_entity_inheritance(resource),
-                attributes=get_attributes(resource, builder),
-                formal_propositions=get_formal_propositions(resource, builder),
-                property_sets=get_property_sets(resource, builder),
-                concept_usage=get_concept_usage(resource, builder, mdc),
-                examples=get_examples(resource),
-                adoption=get_adoption(resource),
-                formal_representation=get_formal_representation(resource),
-                references=get_references(resource),
-                changelog=get_changelog(resource),
-                is_deprecated=resource in R.deprecated_entities,
-                is_abstract=resource in R.abstract_entities,
-                mvds=mvds,
-                is_product_or_type=is_product_or_type,
-                translations=translations,
-                get_language_icon=get_language_icon, 
-            )
-            return rendered_html
+        rendered_html = render_template(
+            "entity.html",
+            navigation=get_navigation(resource),
+            number=idx,
+            definition_number=definition_number,
+            definition=get_definition(resource, mdc),
+            entity=resource,
+            path=md[len(REPO_DIR) :].replace("\\", "/"),
+            entity_inheritance=get_entity_inheritance(resource),
+            attributes=get_attributes(resource, builder),
+            formal_propositions=get_formal_propositions(resource, builder),
+            property_sets=get_property_sets(resource, builder),
+            concept_usage=get_concept_usage(resource, builder, mdc),
+            examples=get_examples(resource),
+            adoption=get_adoption(resource),
+            formal_representation=get_formal_representation(resource),
+            references=get_references(resource),
+            changelog=get_changelog(resource),
+            is_deprecated=resource in R.deprecated_entities,
+            is_abstract=resource in R.abstract_entities,
+            mvds=mvds,
+            is_product_or_type=is_product_or_type,
+            translations=translations,
+            get_language_icon=get_language_icon, 
+        )
+        return rendered_html
         
     elif resource in R.pset_definitions.keys():
 
